@@ -1,0 +1,20 @@
+
+typedef unsigned char byte;
+typedef struct Stack {
+  int top;
+  byte *storage;
+  int elemSize;
+  int maxElements;
+  int size;
+} Stack;
+
+void init(Stack *s, int elemSize, int maxElements);
+int isEmpty(Stack *s);
+int size(Stack *s);
+void push(Stack *s, void *elem);
+void* pop(Stack *s);
+void* top(Stack *s);
+void destroy(Stack *s);
+void checkEmpty(Stack *s);
+#endif
+

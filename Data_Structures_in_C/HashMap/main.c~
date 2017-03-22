@@ -1,0 +1,21 @@
+int main (int argc, char const *argv[]){
+
+    int temp = 0;
+    for(int i = 0; i <= 50; i = i + 2){
+    temp = i;
+    linearInsert((void*)&temp);
+    }
+
+    /*
+    for(int i = 0 ; i < SIZE_HASH_MAP; i++){
+    if(hashMapLinear[i]!=0){
+    printf("Index: %d\t Element: %d\n", i ,hashMapLinear[i]);
+    	}
+    }
+    */
+
+    for(int i = 0; i <= SIZE_HASH_MAP; i++){
+    temp = i;
+    linearSearch((void*)&temp); 
+    }
+} 

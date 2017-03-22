@@ -1,0 +1,18 @@
+/*********************************************************/
+Final Project: COP 4338 
+
+This project includes a collection of different data structures.
+Each data structure library is contained within a seperate folder.
+The data structure folder has a header file and tester file in 
+order to show the user how the function work. The code can be 
+compiled on command line using:
+gcc -std=c99 -Wall dataStructure.c main.c -o dataStructure.
+
+Each data structure uses generic void pointers to allow 
+a wide range of values to be stored in the data structures.
+The user is required to handle the memory allocation and deallocation 
+of the dat values he or she has chosen. Also the user must implement 
+ther own compare function that meets the signature provided. This allows
+the user to create their own structs and use them within the data 
+structures.
+

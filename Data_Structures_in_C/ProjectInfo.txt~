@@ -1,0 +1,43 @@
+/***************************************************************************************/
+Our final project was to create different data structures that could handle
+anytype of data. This means that the user could create their own struct or 
+use any provided data types within the data structures. In order to make 
+the data structure generic void pointers must of be used. The void pointer 
+allows for a block a memory to be allocated and point to any object. We 
+no longer have to restrict the user. 
+
+The following example shows how this works:
+typedef struct _Node
+{
+	struct _Node * prev;
+	struct _Node * next; 
+	void * data;	
+} Node;
+The void * data statement makes the following Node structure generic.
+
+In order to allow for anytype of data to be stored in data structure
+functions must be able to compare a data type without knowing what it is.
+The implementor of the class has no way of knowing what kind of structs 
+may be made in the future. A way to implement a compare function of 
+unknown data type is to ask the user to provide his or her own compare 
+function for the data type they will use. They can then pass this function 
+to the library functions through a function pointer. 
+
+For exampele:
+void * findData( int (*compare)(void * a, void * b), void * data, DLinkedList * list)
+This signature tells the user to provide a function that will take two void pointer 
+arguments and return an int. As long as the user provides a function that matches this
+signature a comparison can be made and library function can be correctly used. 
+
+The project overall gave us a better understanding of how memory works in a computer.
+Pointers and memory allocation play a crucial role in how programs in c are developled. 
+By knowing more about the memory a person can better understand the minute details that 
+need to be address when solving problems and in programming. Also by reimplementing 
+data structures previously learned it furthered our knowledge of data structures in 
+general. For more information about how the project files work go to FinProj->ReadMe.txt.
+/*******************************************************************************************/
+
+
+
+
+

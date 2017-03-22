@@ -1,0 +1,131 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "String.h"
+#include "globalconst.h"
+#include "ArrayList.h"
+
+int String_New(String * strObj,char * str);
+
+int main(int argc, char **argv)
+{
+    String *a = malloc(sizeof (String));
+    String *b = malloc(sizeof (String));
+    String *c = malloc(sizeof (String));
+    String *d = malloc(sizeof (String));
+    String *e = malloc(sizeof (String));
+    String *f = malloc(sizeof (String));
+    String *g = malloc(sizeof (String));
+    String *h = malloc(sizeof (String));
+    String *i = malloc(sizeof (String));
+    String *j = malloc(sizeof (String));
+    String *k = malloc(sizeof (String));
+    String *l = malloc(sizeof (String));
+    String *m = malloc(sizeof (String));
+    String *n = malloc(sizeof (String));
+    String *o = malloc(sizeof (String));
+    String *p = malloc(sizeof (String));
+    String *q = malloc(sizeof (String));
+    String *r = malloc(sizeof (String));
+    String *s = malloc(sizeof (String));
+    String *t = malloc(sizeof (String));
+    String *u = malloc(sizeof (String));
+    String *v = malloc(sizeof (String));
+
+    String *aa = malloc(sizeof (String));
+    String *bb = malloc(sizeof (String));
+    String *cc = malloc(sizeof (String));
+    String *dd = malloc(sizeof (String));
+    String *ee = malloc(sizeof (String));
+    String *ff = malloc(sizeof (String));
+    String *gg = malloc(sizeof (String));
+    String *hh = malloc(sizeof (String));
+    String *ii = malloc(sizeof (String));
+   
+        
+    ArrayList * strList = (ArrayList *) malloc(sizeof(ArrayList));
+    ArrayList * strListA = (ArrayList *) malloc(sizeof(ArrayList));
+    boolean checkList = ArrayList_New(strList);
+    boolean checkList2 = ArrayList_New(strListA);
+    
+    printf("%d",checkList2);
+    
+
+    if (checkList == FALSE)
+    {
+	printf("Error initializing arraylist\n");
+        return -1;
+    }
+    
+    //ArrayList_Add
+    for (int i = 0; i < 400; i++){
+        String * str = (String *)malloc(sizeof(String));
+        String * str2 = (String *)malloc(sizeof(String));
+        String_New(str, "Programming3");
+        String_New(str2,"Programming4");
+        ArrayList_Add(strList,str->str);
+        ArrayList_Add(strListA,str2->str);
+    }
+    
+    for(int i = 0 ; i < 400 ; i++){
+	printf("Element %d is %s\n", i , (char *) strList->arr[i]) ;
+    }
+
+    for(int i = 0 ; i < 400 ; i++){
+	printf("Element %d is %s\n", i , (char *) strListA->arr[i]) ;
+    }
+
+    ArrayList * strList2;
+    ArrayList * strList3 ;
+    //Test ArrayList_InitStruct
+    boolean result = ArrayList_InitStruct(strList2);
+    boolean result2 = ArrayList_InitStruct(strList3);
+
+    printf("The List was : %d\n", result) ;
+    printf("The List was : %d\n", result2) ;
+
+    //Test ArrayList_Free()
+    boolean result3 = ArrayList_Free(strListA) ;
+    printf("The List was : %d\n", result3) ;
+    
+
+
+    //ArrayList_Set
+    for (int i = 0; i < 400; i++)
+    {
+        String * str = (String *)malloc(sizeof(String));
+        String * str2 = (String *)malloc(sizeof(String));
+        String_New(str, "Programming3");
+        String_New(str2,"Programming4");
+        ArrayList_Add(strList,str->str);
+        ArrayList_Add(strListA,str2->str);
+    }
+
+    boolean result5 = ArrayList_Set(strList, 400 , "Hello");
+    printf("The List was : %d\n", result5) ;
+
+    for(int i = 0 ; i < 20 ; i++)
+    {
+	printf("Element %d is %s\n", i , (char *) strList->arr[i]) ;
+    }
+    
+
+    //ArrayList_Clear
+    for (int i = 0; i < 10; i++)
+    {
+        String * str = (String *)malloc(sizeof(String));
+        String_New(str, "Programming3");
+        ArrayList_Add(strList,str->str);
+    }
+   
+	ArrayList_Clear(strList);
+
+   
+    for(int i = 0 ; i < 10 ; i++)
+    {
+	printf("Element %d is %s\n", i , (char *) strList->arr[i]) ;
+    }
+
+    return 0;
+}
+
+

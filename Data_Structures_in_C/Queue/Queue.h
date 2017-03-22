@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+typedef struct QNode{
+	struct QNode * Node;
+	void * data;
+}QNode;
+
+typedef struct Queue{
+	QNode * head;
+	QNode * tail; 
+	size_t queueSize; 
+}Queue;
+
+/*Take an allocated queue and initializies its memebers*/
+void initializeQue(Queue * queue);
+/*Removes all elements of the Queue*/
+void queueClear(Queue * queue);
+/*Places an element to the end of the Queue*/
+void enqueueItem(void * data, Queue * queue);
+/*Removes an element from the front of the Queue*/
+void dequeueItem(Queue * queue);
+/*Returns the first element of the queue without removing it*/
+void * queuePeek(Queue * queue);
+/*Returns the last element in queue*/
+void * queuePeekRear(Queue * queue);
+/*Provides the size of the queue*/
+size_t queSize(Queue * queue);
+/*Check if queue is empty ... Returns 1 if queue empty zero otherwise*/
+int isEmpty(Queue * queue);
